@@ -39,7 +39,7 @@ def analyze():
                 if len(df) >= 2:
                     last_two_quarters = df['Sales'].iloc[-2:]
                     percentage_change = ((last_two_quarters.iloc[1] - last_two_quarters.iloc[0]) / last_two_quarters.iloc[0]) * 100
-                    percentage_change_text = f"نسبة التغير في المبيعات بين الربعين الأخيرين هي {percentage_change:.2f}%"
+                    percentage_change_text = f"نسبة التغير في المبيعات بين الربعين الأخيرين   {percentage_change:.2f}%"
                 else:
                     percentage_change_text = "لا توجد بيانات كافية (أقل من ربعين) لحساب نسبة التغير."
             except Exception as e:
