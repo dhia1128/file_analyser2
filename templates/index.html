@@ -1,28 +1,102 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🤖 Data Analyst Bot</title>
+    <title>InsightFlow | Analyse de données</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #f0f2f6; }
-        .container { max-width: 700px; }
-        .card { margin-top: 50px; }
+        body {
+            background: linear-gradient(135deg, #f4f7fb 0%, #eef3ff 100%);
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 980px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .hero {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+        .hero-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+            color: white;
+            padding: 32px 30px;
+            text-align: center;
+        }
+        .hero-header h1 {
+            margin: 0;
+            font-size: clamp(2rem, 3vw, 2.7rem);
+            font-weight: 700;
+        }
+        .hero-body {
+            padding: 30px;
+        }
+        .about-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .about-box h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+        .about-box p {
+            margin: 0;
+            line-height: 1.7;
+            color: #475569;
+        }
+        .upload-box {
+            border: 1px dashed #cbd5e1;
+            border-radius: 14px;
+            background: #ffffff;
+            padding: 24px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card text-center">
-            <div class="card-header">
-                <h1>🤖 Data Analyst Bot Using LangChain + Ollama</h1>
+        <div class="hero">
+            <div class="hero-header">
+                <h1>InsightFlow</h1>
             </div>
-            <div class="card-body">
-                <p class="card-text">قم برفع ملف CSV واحصل على رؤى حول بياناتك!</p>
-                <form action="/analyze" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file" class="form-control mb-3" accept=".csv" required>
-                    <button type="submit" class="btn btn-primary">📂 تحليل الملف</button>
-                </form>
+            <div class="hero-body">
+                <div class="about-box">
+                    <h2>À propos de l'application</h2>
+                    <p>
+                        InsightFlow est un outil intelligent de gestion et d'analyse de données conçu pour aider les équipes
+                        à transformer des fichiers CSV en informations exploitables. Il permet de visualiser rapidement les
+                        tendances, d'évaluer les performances et de générer un résumé clair et professionnel à partir des données.
+                    </p>
+                </div>
+
+                <div class="upload-box">
+                    <p class="text-muted mb-3">Téléversez un fichier CSV pour générer une analyse de données structurée.</p>
+                    <form action="/analyze" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file" class="form-control mb-3" accept=".csv" required>
+                        <button type="submit" class="btn btn-primary w-100">📊 Analyser le fichier</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
